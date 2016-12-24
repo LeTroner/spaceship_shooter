@@ -11,6 +11,7 @@ class BaseClass(pygame.sprite.Sprite):# inherit from this, collision, draw etc..
 
         pygame.sprite.Sprite.__init__(self) # this gives us acces to image, rect etc
         BaseClass.allsprites.add(self)
+        print("Sprite added", len(BaseClass.allsprites));
 
         # self.image # image itself
         # self.rect #rect of an image, height, width
@@ -26,6 +27,7 @@ class BaseClass(pygame.sprite.Sprite):# inherit from this, collision, draw etc..
 
         ClassName.List.remove(self)
         BaseClass.allsprites.remove(self)
+        print("Sprite removed", len(BaseClass.allsprites));
         del self
 
 class Spaceship(BaseClass):
@@ -138,6 +140,7 @@ class SpaceshipProjectile(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
+
         self.rect.width
         self.rect.height
 
@@ -159,3 +162,6 @@ class SpaceshipProjectile(pygame.sprite.Sprite):
 
         for projectile in SpaceshipProjectile.List:
             projectile.rect.y -= projectile.vely
+            if projectile.rect.y < -100: #ez legyen - y dimenzioja a kepnek
+                SpaceshipProjectile.List.remove(projectile)
+

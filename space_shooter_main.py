@@ -13,7 +13,7 @@ SCREENWIDTH, SCREENHEIGHT = 800, 800
 
 screen = pygame.display.set_mode((SCREENWIDTH,SCREENHEIGHT),0,32)
 clock = pygame.time.Clock() #ora a jatekhoz
-FPS = 40
+FPS = 360
 total_frames = 0
 
 background = pygame.image.load("images/background.png")
