@@ -156,7 +156,7 @@ class SpaceshipProjectile(pygame.sprite.Sprite):
         SpaceshipProjectile.List.add(self)
         self.vely = None
     @staticmethod
-    def movement(): # looping thru all the projectiles, which will be in the list
+    def movement(): #  looping thru all the projectiles, which will be in the list
 
         for projectile in SpaceshipProjectile.List:
             projectile.rect.y -= projectile.vely
